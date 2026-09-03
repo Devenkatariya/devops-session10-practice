@@ -1,0 +1,26 @@
+mkdir -p .github
+
+cat > .github/CODEOWNERS << 'EOF'
+# CODEOWNERS - defines required reviewers for code areas
+
+# Default: everything requires YOUR review
+*                           @Devenkatariya
+
+# Source code requires senior dev review
+src/                        @Devenkatariya
+
+# Tests can be reviewed by any team member
+tests/                      @Devenkatariya
+
+# Infrastructure changes require extra scrutiny
+*.yaml                      @Devenkatariya
+*.yml                       @Devenkatariya
+infra/                      @Devenkatariya
+
+# GitHub Actions workflows require strict review
+.github/workflows/          @Devenkatariya
+
+# Security-sensitive files require security review
+**/auth*                    @Devenkatariya
+**/credential*              @Devenkatariya
+**/secret*                  @Devenkatariya
