@@ -62,3 +62,22 @@ def test_get_monitor_factory():
 
 
 print("All monitoring tests defined successfully")
+cat >> tests/test_monitoring.py << 'EOF'
+
+
+def test_custom_thresholds():
+    """Monitor should use custom thresholds when provided."""
+    monitor = SystemMonitor(
+        "test-service",
+        cpu_threshold=70,
+        memory_threshold=80
+    )
+    assert monitor.cpu_threshold == 70
+    assert monitor.memory_threshold == 80
+
+
+def test_default_thresholds():
+    """Monitor should use defaults when not specified."""
+    monitor = SystemMonitor("test-service")
+    assert monitor.cpu_threshold == SystemMonitor.DEFAULT_CPU_THRESHOLD
+    assert monitor.memory_threshold == SystemMonitor.DEFAULT_MEMORY_THRESHOLD
