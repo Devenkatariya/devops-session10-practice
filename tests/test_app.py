@@ -44,3 +44,7 @@ def test_medium_risk():
     assert calculate_deployment_risk(changes) == 'medium'
 
 print("All tests defined successfully")
+def test_validate_changes_with_valid_input():
+    """Valid dict input should return True."""
+    # This test will be added once validate_changes exists
+    pass
