@@ -45,5 +45,6 @@ if __name__ == '__main__':
     }
     risk = calculate_deployment_risk(example)
     print(f"Deployment risk: {risk}")
-# trying something
+# Input validation for deployment risk
   if not isinstance(changes, dict): 
+ return True
