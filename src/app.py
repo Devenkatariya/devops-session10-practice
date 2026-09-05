@@ -47,4 +47,4 @@ if __name__ == '__main__':
     print(f"Deployment risk: {risk}")
 # Input validation for deployment risk
   if not isinstance(changes, dict): 
- return True
+ return "high"
